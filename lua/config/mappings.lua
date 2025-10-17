@@ -41,7 +41,7 @@ map("n", "<leader>h", ":ToggleTerm direction=horizontal size=10<Enter>", {desc =
 map("n", "<leader>v", ":ToggleTerm direction=vertical size=50<Enter>", {desc = "Open terminal"})
 --git
 map("n", "<leader>lg", ":LazyGit<Enter>", { desc = "Run LazyGit" })
-
+--zen mode
 map("n", "<leader>z", function ()
 Snacks.zen()
 end)
