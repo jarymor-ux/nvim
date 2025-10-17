@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local Snacks = require("snacks")
 
 -- nvim controll
 map("n", ";", ":", { desc = "CMD enter command mode" })
@@ -29,7 +30,9 @@ map("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
 -- split
 map("n", "<leader>s", ":vsplit<Enter>", { desc = "Vertical split" })
 --explorer
-map("n", "<leader>e", ":NvimTreeToggle<Enter>", { desc = "Open/Close Explorer" })
+map("n", "<leader>e", function ()
+Snacks.explorer()
+end, { desc = "Open/Close Explorer" })
 map("n", "<leader>cc", ":NvimTreeCollapse<Enter>", { desc = "Collapse all folders" })
 -- diagnostics
 map("n", "<leader>fd", ":Telescope diagnostics <CR>", { desc = "Telescope Diagnostic File" })
@@ -38,3 +41,7 @@ map("n", "<leader>h", ":ToggleTerm direction=horizontal size=10<Enter>", {desc =
 map("n", "<leader>v", ":ToggleTerm direction=vertical size=50<Enter>", {desc = "Open terminal"})
 --git
 map("n", "<leader>lg", ":LazyGit<Enter>", { desc = "Run LazyGit" })
+
+map("n", "<leader>z", function ()
+Snacks.zen()
+end)
