@@ -1,13 +1,20 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.smarttab = true
-vim.opt.expandtab = true
-vim.opt.termguicolors = true
+local o = vim.o
+local opt = vim.opt
+opt.number = true
+opt.relativenumber = true
+opt.smarttab = true
+opt.expandtab = true
+opt.termguicolors = true
 vim.cmd[[colorscheme catppuccin-mocha]]
 
-vim.o.laststatus = 0
+o.laststatus = 0
 
-vim.o.wrap = false
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
+o.wrap = false
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
+
+opt.swapfile = false
+opt.backup = false
+opt.writebackup = false
+
