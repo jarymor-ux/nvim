@@ -103,7 +103,7 @@ return {
               buffer = "[Buf]",
               path = "[Path]",
             },
-
+            -- не важно что ругается на entry, если убрать то будут везде nil
             before = function(entry, vim_item)
               return vim_item
             end,

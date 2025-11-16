@@ -29,9 +29,6 @@ return {
             },
 
         },
-        zen = {
-
-        },
         explorer = {
 
         }
