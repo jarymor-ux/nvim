@@ -5,7 +5,7 @@ opt.relativenumber = true
 opt.smarttab = true
 opt.expandtab = true
 opt.termguicolors = true
-vim.cmd[[colorscheme catppuccin-mocha]]
+vim.cmd[[colorscheme nord]]
 
 o.laststatus = 0
 
