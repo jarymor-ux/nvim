@@ -5,7 +5,7 @@ opt.relativenumber = true
 opt.smarttab = true
 opt.expandtab = true
 opt.termguicolors = true
-vim.cmd[[colorscheme nord]]
+vim.cmd[[colorscheme kanagawa]]
 
 o.laststatus = 0
 

@@ -4,7 +4,7 @@ local Snacks = require("snacks")
 -- nvim controll
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map({ "i", "v" }, "jj", "<ESC>")
-
+map("n", "<leader><Tab>", ":bnext<Enter>", {desc = "Next tab"})
 -- show filepath
 map("n", "pp", function()
 	local path = vim.fn.expand("%:p")
@@ -26,7 +26,6 @@ map("n", "ff", vim.lsp.buf.format, { desc = "Format file" })
 map("n", "gd", vim.lsp.buf.definition, { desc = "Go to Defenition" })
 map("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implemented interfaces" })
 map("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
-
 -- split
 map("n", "<leader>s", ":vsplit<Enter>", { desc = "Vertical split" })
 --explorer
@@ -41,7 +40,3 @@ map("n", "<leader>h", ":ToggleTerm direction=horizontal size=10<Enter>", {desc =
 map("n", "<leader>v", ":ToggleTerm direction=vertical size=50<Enter>", {desc = "Open terminal"})
 --git
 map("n", "<leader>lg", ":LazyGit<Enter>", { desc = "Run LazyGit" })
---zen mode
-map("n", "<leader>z", function ()
-Snacks.zen()
-end)
