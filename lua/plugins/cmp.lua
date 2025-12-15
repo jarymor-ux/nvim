@@ -8,7 +8,7 @@ return {
       "hrsh7th/cmp-buffer",   -- Буферы
       "hrsh7th/cmp-path",     -- Пути файловой системы
       "hrsh7th/cmp-cmdline",  -- Командная строка
-      "hrsh7th/cmp-nvim-lua", -- Neovim Lua API
+      "hrsh7th/cmp-nvim-lua", -- Neovim Lua API (устаревший, но оставлен для совместимости)
 
       -- Сниппеты
       "L3MON4D3/LuaSnip",             -- Движок сниппетов

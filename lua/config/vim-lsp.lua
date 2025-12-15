@@ -1,4 +1,3 @@
-local servers = { "lua_ls", "gopls", "clangd" }
 -- Настройка иконок диагностики
 local signs = {
     Error = " ",
@@ -34,6 +33,7 @@ vim.diagnostic.config({
 
 
 -- Настройка Lua Language Server для Neovim
+-- workspace настраивается автоматически через lazydev.nvim
 vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
@@ -41,11 +41,10 @@ vim.lsp.config("lua_ls", {
                 version = "LuaJIT",
             },
             diagnostics = {
-                globals = { "vim" },             -- Указываем что vim - это глобальная переменная
+                globals = { "vim" },
             },
-            workspace = {
-                library = vim.api.nvim_get_runtime_file("", true),
-                checkThirdParty = false,
+            completion = {
+                callSnippet = "Replace",
             },
             telemetry = {
                 enable = false,
@@ -90,5 +89,4 @@ vim.lsp.config("clangd", {
     },
 })
 
--- Автоматический запуск LSP для соответствующих файлов
-vim.lsp.enable(servers)
+-- LSP автоматически запускается через mason-lspconfig (automatic_enable = true)

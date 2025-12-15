@@ -32,7 +32,6 @@ map("n", "<leader>s", ":vsplit<Enter>", { desc = "Vertical split" })
 map("n", "<leader>e", function ()
 Snacks.explorer()
 end, { desc = "Open/Close Explorer" })
-map("n", "<leader>cc", ":NvimTreeCollapse<Enter>", { desc = "Collapse all folders" })
 -- diagnostics
 map("n", "<leader>fd", ":Telescope diagnostics <CR>", { desc = "Telescope Diagnostic File" })
 --term

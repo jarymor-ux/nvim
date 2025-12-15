@@ -7,8 +7,8 @@ opt.expandtab = true
 opt.termguicolors = true
 vim.cmd[[colorscheme kanagawa]]
 
-o.laststatus = 0
-
+o.laststatus = 3
+opt.cursorline = true
 o.wrap = false
 opt.tabstop = 4
 opt.shiftwidth = 4
