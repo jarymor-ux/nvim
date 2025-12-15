@@ -1,10 +1,10 @@
 local servers = { "lua_ls", "gopls", "clangd" }
 -- Настройка иконок диагностики
 local signs = {
-    Error = "",
-    Warn = "",
-    Hint = "󱧤",
-    Info = "",
+    Error = " ",
+    Warn = " ",
+    Hint = "󱧤 ",
+    Info = " ",
 }
 
 -- Настройка внешнего вида диагностики
