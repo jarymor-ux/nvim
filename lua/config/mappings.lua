@@ -5,6 +5,8 @@ local Snacks = require("snacks")
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map({ "i", "v" }, "jj", "<ESC>")
 map("n", "<leader><Tab>", ":bnext<Enter>", {desc = "Next tab"})
+map("i", "ww", "<Esc>:w<Enter>", {desc = "Save and normal mode"})
+map("n", "<leader>bd", ":bd<Enter>", {desc = "Close current buffer"})
 -- show filepath
 map("n", "pp", function()
 	local path = vim.fn.expand("%:p")
