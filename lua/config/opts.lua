@@ -5,7 +5,7 @@ opt.relativenumber = true
 opt.smarttab = true
 opt.expandtab = true
 opt.termguicolors = true
-vim.cmd[[colorscheme kanagawa]]
+vim.cmd[[colorscheme kanagawa-dragon]]
 
 o.laststatus = 3
 opt.cursorline = true
