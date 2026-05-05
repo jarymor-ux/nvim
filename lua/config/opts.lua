@@ -1,11 +1,22 @@
 local o = vim.o
 local opt = vim.opt
+
+-- GUI/daemon запуски часто не наследуют shell PATH (Homebrew bin не виден).
+-- Добавляем стандартные пути, чтобы внешние тулзы (например tree-sitter) находились стабильно.
+local function ensure_path(dir)
+    if vim.env.PATH and not vim.env.PATH:match(vim.pesc(dir)) then
+        vim.env.PATH = dir .. ":" .. vim.env.PATH
+    end
+end
+
+ensure_path("/opt/homebrew/bin")
+ensure_path("/usr/local/bin")
+
 opt.number = true
 opt.relativenumber = true
 opt.smarttab = true
 opt.expandtab = true
 opt.termguicolors = true
-vim.cmd[[colorscheme kanagawa-dragon]]
 
 o.laststatus = 3
 opt.cursorline = true
@@ -18,10 +29,13 @@ opt.swapfile = false
 opt.backup = false
 opt.writebackup = false
 
-vim.cmd('set list')
-vim.cmd('set listchars=')
-vim.cmd('set listchars+=tab:--')
-vim.cmd('set listchars+=extends:·')
-vim.cmd('set listchars+=precedes:·')
-vim.cmd('set listchars+=nbsp:·')
-vim.cmd('set listchars+=trail:·')
+opt.list = true
+opt.listchars = {
+    tab = "--",
+    extends = "·",
+    precedes = "·",
+    nbsp = "·",
+    trail = "·",
+}
+
+vim.cmd.colorscheme("kanagawa-dragon")

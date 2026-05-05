@@ -1,15 +1,14 @@
--- Настройка иконок диагностики
+-- Иконки диагностики
 local signs = {
-    Error = " ",
-    Warn = " ",
+    Error = " ",
+    Warn = " ",
     Hint = "󱧤 ",
-    Info = " ",
+    Info = " ",
 }
 
--- Настройка внешнего вида диагностики
 vim.diagnostic.config({
     virtual_text = {
-        prefix = "●", -- Префикс для виртуального текста
+        prefix = "●",
         spacing = 4,
     },
     signs = {
@@ -25,23 +24,23 @@ vim.diagnostic.config({
     severity_sort = true,
     float = {
         border = "rounded",
-        source = true,             -- Показывать источник диагностики
+        source = true,
         header = "",
         prefix = "",
     },
 })
 
+-- Глобальные настройки для всех LSP клиентов (новый API в nvim 0.11+)
+vim.lsp.config("*", {
+    root_markers = { ".git" },
+})
 
--- Настройка Lua Language Server для Neovim
--- workspace настраивается автоматически через lazydev.nvim
+-- lua_ls для Neovim. Полные настройки для vim API даёт lazydev.nvim (см. lua/plugins/lazydev.lua)
 vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
             runtime = {
                 version = "LuaJIT",
-            },
-            diagnostics = {
-                globals = { "vim" },
             },
             completion = {
                 callSnippet = "Replace",
@@ -53,7 +52,6 @@ vim.lsp.config("lua_ls", {
     },
 })
 
--- Настройка gopls для Go
 vim.lsp.config("gopls", {
     settings = {
         gopls = {
@@ -64,12 +62,11 @@ vim.lsp.config("gopls", {
             },
             staticcheck = true,
             gofumpt = true,
-            semanticTokens = true
+            semanticTokens = true,
         },
     },
 })
 
--- Настройка clangd для C/C++
 vim.lsp.config("clangd", {
     cmd = {
         "clangd",
@@ -90,4 +87,7 @@ vim.lsp.config("clangd", {
     },
 })
 
--- LSP автоматически запускается через mason-lspconfig (automatic_enable = true)
+-- В 0.12 рекомендуется явно включать клиенты через vim.lsp.enable.
+-- mason-lspconfig также включит их автоматически (automatic_enable = true),
+-- но дублирующий enable() безопасен и делает конфиг самодостаточным.
+vim.lsp.enable({ "lua_ls", "gopls", "clangd" })
