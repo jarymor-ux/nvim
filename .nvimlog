@@ -1,0 +1,3 @@
+WRN 2025-12-15T13:02:47.107 ?.22953    server_start:199: Failed to start server: operation not permitted: /var/folders/x9/wr7234px6r9963gf_n47p1pm0000gn/T/nvim.ostape/UkKnsv/nvim.22953.0
+WRN 2025-12-15T13:02:55.577 ?.22991    server_start:199: Failed to start server: operation not permitted: /var/folders/x9/wr7234px6r9963gf_n47p1pm0000gn/T/nvim.ostape/robZ3E/nvim.22991.0
+WRN 2025-12-15T13:07:42.957 ?.24732    server_start:199: Failed to start server: operation not permitted: /var/folders/x9/wr7234px6r9963gf_n47p1pm0000gn/T/nvim.ostape/yXJRYQ/nvim.24732.0
